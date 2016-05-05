@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Hey you!</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- jQuery
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- jQuery
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="js/tools.js"></script>
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/loaders.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+<div id="bg"></div>
+<div id="loader" class="loader">
+  <div class="loader-inner ball-grid-pulse">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+
+  <!-- Initiate
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script>
+  $(document).ready(function(){
+    setupSearch();
+    //getBG('mountains');
+
+    fullSize($('#bg'));
+
+    centerContent($('.ball-grid-pulse'));
+
+    $(document).keyup(function(e) {
+      if (e.keyCode == 27) {
+        //resetSearch();   // esc
+        //$('.section-description').val('Find photos of cities. Just type a minimal of three characters.');
+      }
+
+      if (e.keyCode == 13) {
+        handleSearch();
+      }
+    });
+
+  });
+
+  $(window).resize(function(){
+    centerContent($('.ball-grid-pulse'));
+  });
+  </script>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="section search">
+    <div class="container">
+      <!--<h3 class="section-heading"><span class="white-bg">Hey you!</span></h3>-->
+      <!--<p class="section-description"><span class="white-bg">Find photos of cities. Just type a minimal of three characters.</span></span></p>-->
+      <div class="predict">
+
+        <input class="u-full-width" type="text" placeholder="Just type here.." id="search">
+        <span id="search-full">Find photos of cities. Just type a minimal of three characters.</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
