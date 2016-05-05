@@ -4,10 +4,10 @@ module.exports = function (shipit) {
 
   shipit.initConfig({
     default: {
-      workspace: '/',
+      workspace: 'tmp',
       repositoryUrl: 'git@github.com:bingneef/city-search.git',
       deployTo: '/var/www/city-search/',
-      dirToCopy: '/',
+      dirToCopy: '',
       ignores: ['.git', 'node_modules'],
       keepReleases: 10,
       deleteOnRollback: false,
