@@ -6,7 +6,6 @@ module.exports = function (shipit) {
     default: {
       workspace: 'tmp',
       repositoryUrl: 'git@github.com:bingneef/city-search.git',
-      deployTo: '/var/www/city-search/',
       dirToCopy: '',
       ignores: ['.git', 'node_modules'],
       keepReleases: 10,
@@ -22,8 +21,12 @@ module.exports = function (shipit) {
     production: {
       servers: 'bing@5.157.85.46',
       branch: 'master',
-      environment: 'production'
+      deployTo: '/var/www/city-search/'
+    },
+    staging: {
+      servers: 'bing@5.157.85.46',
+      branch: 'develop',
+      deployTo: '/var/www/city-search/'
     }
   });
 };
-1
